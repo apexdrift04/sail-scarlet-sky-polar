@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Syne";
+    src: url("fonts/Syne-ExtraBold.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px;
+    height: 264px;
+    overflow: hidden;
+    background: #0a0b10;
+  }
+  .frame {
+    position: relative;
+    width: 1200px;
+    height: 264px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 55% 140% at 78% 42%, rgba(255, 90, 54, 0.32) 0%, rgba(255, 90, 54, 0.04) 46%, #0a0b10 74%);
+  }
+  svg.scene { position: absolute; inset: 0; width: 1200px; height: 264px; }
+  .lockup {
+    position: absolute;
+    left: 64px;
+    top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .word {
+    font-family: "Syne", sans-serif;
+    font-weight: 800;
+    font-variation-settings: "wght" 800;
+    font-size: 58px;
+    line-height: 0.82;
+    letter-spacing: 0.14em;
+    color: #f3efe8;
+    text-shadow:
+      0 2px 0 #0a0b10,
+      0 0 16px rgba(10, 11, 16, 0.95),
+      0 0 22px rgba(240, 193, 74, 0.22);
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <svg class="scene" viewBox="0 0 1200 264" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="wall" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#ff5a36" stop-opacity="0"/>
+          <stop offset="40%" stop-color="#ff5a36" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#f0c14a" stop-opacity="0.05"/>
+        </linearGradient>
+        <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="6"/>
+        </filter>
+        <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="12"/>
+        </filter>
+      </defs>
+      <path d="M620 264 L860 8" stroke="url(#wall)" stroke-width="2.5" fill="none"/>
+      <path d="M1040 264 L960 8" stroke="url(#wall)" stroke-width="2.5" fill="none"/>
+      <path d="M580 264 L840 20" stroke="#ff5a36" stroke-width="8" opacity="0.14" filter="url(#soft)"/>
+      <path d="M1080 264 L980 20" stroke="#ff5a36" stroke-width="8" opacity="0.14" filter="url(#soft)"/>
+      <g fill="#1c1e28" stroke="#ff5a36" stroke-width="1">
+        <polygon points="700,36 718,50 698,66 680,48"/>
+        <polygon points="1088,48 1108,64 1084,84 1064,62"/>
+        <polygon points="640,150 662,164 638,186 616,164"/>
+        <polygon points="1120,140 1144,156 1116,180 1092,156"/>
+      </g>
+      <g>
+        <circle cx="900" cy="168" r="3.5" fill="#f0c14a"/>
+        <circle cx="868" cy="188" r="2.4" fill="#ff5a36"/>
+        <circle cx="940" cy="196" r="3" fill="#f3efe8"/>
+        <circle cx="820" cy="150" r="2" fill="#f0c14a"/>
+        <circle cx="980" cy="158" r="2.2" fill="#ff5a36"/>
+        <circle cx="760" cy="120" r="1.6" fill="#f3efe8"/>
+        <circle cx="1040" cy="110" r="1.8" fill="#f0c14a"/>
+        <circle cx="1124" cy="90" r="1.5" fill="#ff5a36"/>
+      </g>
+      <g transform="translate(910 108)">
+        <ellipse cx="0" cy="36" rx="22" ry="48" fill="#ff5a36" opacity="0.4" filter="url(#glow)"/>
+        <path d="M0 -62 C14 -32 34 4 30 42 C26 70 14 84 0 84 C-14 84 -26 70 -30 42 C-34 4 -14 -32 0 -62 Z" fill="#ff5a36"/>
+        <path d="M0 -40 C8 -18 18 6 16 38 C14 58 8 68 0 68 C-8 68 -14 58 -16 38 C-18 6 -8 -18 0 -40 Z" fill="#f0c14a"/>
+        <path d="M0 -16 C4 -2 8 12 7 32 C6 44 3 50 0 50 C-3 50 -6 44 -7 32 C-8 12 -4 -2 0 -16 Z" fill="#f3efe8"/>
+      </g>
+    </svg>
+    <div class="lockup">
+      <div class="word">EMBER</div>
+      <div class="word">RAID</div>
+    </div>
+  </div>
+</body>
+</html>
